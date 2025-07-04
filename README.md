@@ -50,10 +50,10 @@ npm run start:dev
 
 ## Terminais disponíveis:
 
-[GET]/list_items
-[POST]/liste_items
-[DELETE]/list_items/:id
-[PUT]/list_items/:id
+-[GET]/list_items
+-[POST]/liste_items
+-[DELETE]/list_items/:id
+-[PUT]/list_items/:id
 
 
 
