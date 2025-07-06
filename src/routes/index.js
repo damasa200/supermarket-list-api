@@ -8,7 +8,11 @@ router.get("/", (req, res) => {
 
 router.get("/list_items", async (req, res) => {
   try {
-    const items = await ListItem.find();
+    const username = req.headers['username'];
+    if (!username) {
+      return res.status(401).json({ error: "Username is required" });
+    }
+    const items = await ListItem.find({ username });
     return res.json(items);
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -17,6 +21,10 @@ router.get("/list_items", async (req, res) => {
 
 router.post("/list_items", async (req, res) => {
   try {
+    const { username } = req.headers;
+    if (!username) {
+      return res.status(401).json({error: "Username is required"});
+    }
     const { name, quantity, checked } = req.body;
 
     if (!name || name.length < 3) {
@@ -35,6 +43,7 @@ router.post("/list_items", async (req, res) => {
       name,
       quantity,
       checked: checked || false,
+      username,
     });
 
     return res.json(newItem);
