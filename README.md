@@ -4,6 +4,17 @@ Esta API foi criada para ajudar usuários a organizarem sua lista
 de compras e evitar o esquecimento de itens no supermercado.
 
 
+### API de produção:
+
+Para acessar a API final, use o link:
+
+```
+https://supermarket-list-api-b9oy.onrender.com/
+```
+
+Aplicativos foram implantados usando Render e MongoDB Atlas
+
+
 ### Tecnologias Utilizadas
 
 - Node.js
